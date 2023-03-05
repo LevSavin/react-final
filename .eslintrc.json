@@ -25,7 +25,8 @@
     "spaced-comment": "error",
     "quotes": ["error", "double"],
     "no-duplicate-imports": "error",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "@typescript-eslint/no-explicit-any": "off"
   },
   "settings": {
     "import/resolver": {

@@ -2,7 +2,7 @@ import { lazy, Suspense, useEffect } from "react";
 import { Routes, Route } from "react-router-dom"
 import { login } from "./redux/reducers/authReducer";
 import { useAppDispatch, useAppSelector } from "./redux/store";
-
+import { axios } from "./index";
 import "./App.css";
 import Layout from "./components/Layout";
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -16,13 +16,22 @@ function App() {
   const dispatch = useAppDispatch()
 
   const getAuthInfo = async () => {
-    // запрос на сервер
-    const result = {
-      email: "test@mail.ru",
-      name: "Иван"
-    }
-    await dispatch(login(result));
+    const url = "/5";
+    axios
+      .get(url)
+      .then(({ data }) => {
+        console.log(data)
+        const result = { // моковые данные
+          email: "test@mail.ru",
+          name: "Иван"
+        }
+        dispatch(login(result));
+      })
+      .catch((error) => {
+        console.log(error)
+      });
   }
+
   useEffect(() => {
     getAuthInfo();
   }, []);
