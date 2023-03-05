@@ -7,6 +7,7 @@ function Layout() {
       <header>
         <CustomLink to="/">Главная</CustomLink>
         <CustomLink to="/registration">Регистрация</CustomLink>
+        <CustomLink to="/profile">Профиль</CustomLink>
       </header>
       <main>
         <Outlet></Outlet>
