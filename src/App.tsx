@@ -3,11 +3,7 @@ import { Routes, Route } from "react-router-dom"
 import { login } from "./redux/reducers/authReducer";
 import { useAppDispatch, useAppSelector } from "./redux/store";
 import { axios } from "./index";
-import "./App.css";
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
+import "./styles/App.scss";
 
 import Layout from "./components/Layout";
 const HomePage = lazy(() => import("./pages/HomePage"));
