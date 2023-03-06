@@ -1,13 +1,12 @@
 import ReactDOM from "react-dom/client";
-import App from "./App";
+import App from "@/App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-import "./styles/App.scss";
-import axiosInstance from "axios";
 require("./bootstrap");
 
+import axiosInstance from "axios";
 export const axios = axiosInstance.create({
   baseURL: process.env.REACT_APP_BASE_API_URL
 });
