@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 require("./bootstrap");
+import "~/App.scss"
 
 import axiosInstance from "axios";
 export const axios = axiosInstance.create({

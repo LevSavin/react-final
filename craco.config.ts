@@ -8,12 +8,5 @@ module.exports = {
       "@": resolvePath("./src"),
       "~": resolvePath("./src/styles"),
     },
-    css: {
-      loaderOptions: {
-        sass: {
-          additionalData: "~/styles/App.scss;",
-        },
-      },
-    },
   },
 }

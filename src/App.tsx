@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom"
 import { login } from "./redux/reducers/authReducer";
 import { useAppDispatch, useAppSelector } from "./redux/store";
 import { axios } from "./index";
-import "./styles/App.scss";
 
 import Layout from "./components/Layout";
 const HomePage = lazy(() => import("./pages/HomePage"));

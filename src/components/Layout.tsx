@@ -1,14 +1,10 @@
 import {Outlet} from "react-router-dom"
-import CustomLink from "./CustomLink";
+import HeaderBar from "./HeaderBar";
 
 function Layout() {
   return (
     <div className="layout">
-      <header>
-        <CustomLink to="/">Главная</CustomLink>
-        <CustomLink to="/registration">Регистрация</CustomLink>
-        <CustomLink to="/profile">Профиль</CustomLink>
-      </header>
+      <HeaderBar></HeaderBar>
       <main>
         <Outlet></Outlet>
       </main>
