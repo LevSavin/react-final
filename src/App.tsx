@@ -19,8 +19,7 @@ function App() {
     const url = "/5";
     axios
       .get(url)
-      .then(({ data }) => {
-        console.log(data)
+      .then(() => {
         const result = { // моковые данные
           email: "test@mail.ru",
           name: "Иван"
