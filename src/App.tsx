@@ -38,10 +38,10 @@ function App() {
   return (
     <Suspense fallback={<div className="container">Загрузка...</div>}>
       <Routes>
-        <Route path="/" element={<Layout/>}>
-          <Route index path="/" element={<HomePage/>}></Route>
-          <Route path="/registration" element={<RegisterPage/>}></Route>
-          <Route path="/profile" element={<ProfilePage/>}></Route>
+        <Route path={`${process.env.REACT_APP_REPO}`} element={<Layout/>}>
+          <Route index path={`${process.env.REACT_APP_REPO}`} element={<HomePage/>}></Route>
+          <Route path={`${process.env.REACT_APP_REPO}/registration`} element={<RegisterPage/>}></Route>
+          <Route path={`${process.env.REACT_APP_REPO}/profile`} element={<ProfilePage/>}></Route>
           <Route path="*" element={<NotFoundPage/>}></Route>
         </Route>
       </Routes>
