@@ -16,7 +16,7 @@ function App() {
   const dispatch = useAppDispatch()
 
   const getAuthInfo = async () => {
-    const url = "/5";
+    const url = "/api/vehicle_types";
     axios
       .get(url)
       .then(() => {

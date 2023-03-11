@@ -1,12 +1,12 @@
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 
 function HomePage() {
   return (
     <div>
-      <h2>Рестораны</h2>
+      {/* <h2>Рестораны</h2>
       <div>
         <Button variant="contained">Hello World</Button>
-      </div>
+      </div> */}
     </div>
   );
 }
