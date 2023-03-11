@@ -20,7 +20,7 @@ function HeaderBar() {
   const navigate = useNavigate();
 
   const toMain = () => {
-    navigate(`${process.env.REACT_APP_REPO}`);
+    navigate(`${process.env.REACT_APP_REPO}/`);
   }
 
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
