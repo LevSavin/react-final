@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkboilerplate_react_typescript=self.webpackChunkboilerplate_react_typescript||[]).push([[846],{846:function(e,t,r){r.r(t);var c=r(184);t.default=function(){return(0,c.jsx)("div",{})}}}]);
+//# sourceMappingURL=846.d55365ae.chunk.js.map
