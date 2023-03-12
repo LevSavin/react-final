@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -16,14 +16,21 @@ const style = {
   p: 4,
 };
 
-export default function defaultModal() {
-  const [open, setOpen] = React.useState(false);
+export default function defaultModal({isModalOpen, hideLoginModal}: {isModalOpen: boolean, hideLoginModal}) {
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false)
+    hideLoginModal();
+  };
+
+  useEffect(() => {
+    setOpen(isModalOpen);
+    console.log(isModalOpen)
+  }, [isModalOpen]);
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
       <Modal
         open={open}
         onClose={handleClose}

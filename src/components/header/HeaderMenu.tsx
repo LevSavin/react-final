@@ -10,7 +10,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import type {objectType, headerItem} from "@/types/common"
 
-function HeaderDropdown({menu, role}: {menu: objectType, role: string}) {
+function HeaderDropdown({menu, role, showLoginModal}: {menu: objectType, role: string, showLoginModal}) {
   /* 
   const navigate = useNavigate();
 
@@ -31,10 +31,6 @@ function HeaderDropdown({menu, role}: {menu: objectType, role: string}) {
   const handleMenu = (page) => {
     console.log("Редирект", page.code)
     handleCloseUserMenu();
-  }
-
-  const login = () => {
-    console.log("Открыть модалку логина",)
   }
 
   if (menu.length > 0) {
@@ -72,7 +68,7 @@ function HeaderDropdown({menu, role}: {menu: objectType, role: string}) {
   }
   return (
     <Button
-      onClick={() => login()}
+      onClick={() => showLoginModal()}
       variant="outlined"
       sx={{ ml: 1, display: "block" }}
     >

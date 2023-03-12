@@ -1,3 +1,4 @@
+import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -6,7 +7,8 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import IconStorefront from "@mui/icons-material/Storefront";
-import HeaderDropdown from "@/components/header/HeaderMenu";
+import HeaderMenu from "@/components/header/HeaderMenu";
+import DefaultModal from "@/components/modal/DefaultModal";
 import type {objectType, headerItem} from "@/types/common"
 
 
@@ -25,6 +27,9 @@ const menu: objectType = {
 
 function HeaderBar() {
   const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = React.useState(false);  
+  const showLoginModal = () => setIsModalOpen(true);
+  const hideLoginModal = () => setIsModalOpen(false);
 
   const toMain = () => {
     navigate(`${process.env.REACT_APP_REPO}/`);
@@ -68,9 +73,10 @@ function HeaderBar() {
             ))}
           </Box>
 
-          <HeaderDropdown menu={menu} role={role}></HeaderDropdown>
+          <HeaderMenu menu={menu} role={role} showLoginModal={showLoginModal}></HeaderMenu>
         </Toolbar>
       </Container>
+      <DefaultModal isModalOpen={isModalOpen} hideLoginModal={hideLoginModal}></DefaultModal>
     </AppBar>
   );
 }
