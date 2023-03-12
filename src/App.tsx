@@ -20,7 +20,7 @@ function App() {
     axios
       .get(url)
       .then(() => {
-        const result = { // моковые данные
+        const result = {
           email: "test@mail.ru",
           name: "Иван"
         }
