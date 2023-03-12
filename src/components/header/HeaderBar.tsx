@@ -27,9 +27,9 @@ const menu: objectType = {
 
 function HeaderBar() {
   const navigate = useNavigate();
-  const [isModalOpen, setIsModalOpen] = React.useState(false);  
-  const showLoginModal = () => setIsModalOpen(true);
-  const hideLoginModal = () => setIsModalOpen(false);
+  
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const handleModalOpen = (value) => setIsModalOpen(value);
 
   const toMain = () => {
     navigate(`${process.env.REACT_APP_REPO}/`);
@@ -73,10 +73,10 @@ function HeaderBar() {
             ))}
           </Box>
 
-          <HeaderMenu menu={menu} role={role} showLoginModal={showLoginModal}></HeaderMenu>
+          <HeaderMenu menu={menu} role={role} handleModalOpen={handleModalOpen}></HeaderMenu>
         </Toolbar>
       </Container>
-      <DefaultModal isModalOpen={isModalOpen} hideLoginModal={hideLoginModal}></DefaultModal>
+      <DefaultModal isModalOpen={isModalOpen} handleModalOpen={handleModalOpen}></DefaultModal>
     </AppBar>
   );
 }

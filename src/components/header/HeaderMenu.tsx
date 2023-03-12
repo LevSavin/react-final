@@ -10,7 +10,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import type {objectType, headerItem} from "@/types/common"
 
-function HeaderDropdown({menu, role, showLoginModal}: {menu: objectType, role: string, showLoginModal}) {
+function HeaderDropdown({menu, role, handleModalOpen}: {menu: objectType, role: string, handleModalOpen}) {
   /* 
   const navigate = useNavigate();
 
@@ -68,7 +68,7 @@ function HeaderDropdown({menu, role, showLoginModal}: {menu: objectType, role: s
   }
   return (
     <Button
-      onClick={() => showLoginModal()}
+      onClick={() => handleModalOpen(true)}
       variant="outlined"
       sx={{ ml: 1, display: "block" }}
     >
