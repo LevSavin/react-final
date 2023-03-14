@@ -1,8 +1,10 @@
+import "~/components/_modals.scss"
 import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import IconClose from "@/components/icons/IconClose";
 
 const style = {
   position: "absolute" as const,
@@ -36,11 +38,15 @@ export default function defaultModal({isModalOpen, handleModalOpen}: {isModalOpe
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        className="modal"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
+          <div className="modal__header">
+            <p>Text in a modal</p>
+            <div className="link modal__icon-close" onClick={() => handleClose()}>
+              <IconClose></IconClose>
+            </div>
+          </div>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
           </Typography>
