@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/react-final/static/css/main.72de792e.css",
-    "main.js": "/react-final/static/js/main.5d95abb8.js",
-    "static/js/758.528fb1ee.chunk.js": "/react-final/static/js/758.528fb1ee.chunk.js",
+    "main.js": "/react-final/static/js/main.0215ddc2.js",
+    "static/css/276.f5f0eb2f.chunk.css": "/react-final/static/css/276.f5f0eb2f.chunk.css",
+    "static/js/276.577bf507.chunk.js": "/react-final/static/js/276.577bf507.chunk.js",
     "static/js/720.719eac1b.chunk.js": "/react-final/static/js/720.719eac1b.chunk.js",
     "static/js/486.6b8dbd6f.chunk.js": "/react-final/static/js/486.6b8dbd6f.chunk.js",
     "static/js/160.d991e176.chunk.js": "/react-final/static/js/160.d991e176.chunk.js",
@@ -41,8 +42,9 @@
     "static/media/roboto-greek-ext-700-normal.woff2": "/react-final/static/media/roboto-greek-ext-700-normal.bd9854c751441ccc1a70.woff2",
     "index.html": "/react-final/index.html",
     "main.72de792e.css.map": "/react-final/static/css/main.72de792e.css.map",
-    "main.5d95abb8.js.map": "/react-final/static/js/main.5d95abb8.js.map",
-    "758.528fb1ee.chunk.js.map": "/react-final/static/js/758.528fb1ee.chunk.js.map",
+    "main.0215ddc2.js.map": "/react-final/static/js/main.0215ddc2.js.map",
+    "276.f5f0eb2f.chunk.css.map": "/react-final/static/css/276.f5f0eb2f.chunk.css.map",
+    "276.577bf507.chunk.js.map": "/react-final/static/js/276.577bf507.chunk.js.map",
     "720.719eac1b.chunk.js.map": "/react-final/static/js/720.719eac1b.chunk.js.map",
     "486.6b8dbd6f.chunk.js.map": "/react-final/static/js/486.6b8dbd6f.chunk.js.map",
     "160.d991e176.chunk.js.map": "/react-final/static/js/160.d991e176.chunk.js.map",
@@ -50,6 +52,6 @@
   },
   "entrypoints": [
     "static/css/main.72de792e.css",
-    "static/js/main.5d95abb8.js"
+    "static/js/main.0215ddc2.js"
   ]
 }
