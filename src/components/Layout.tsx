@@ -1,5 +1,6 @@
 import {Outlet} from "react-router-dom"
 import HeaderBar from "@/components/header/HeaderBar";
+import Footer from "@/components/footer/Footer";
 import Container from "@mui/material/Container";
 
 function Layout() {
@@ -11,6 +12,7 @@ function Layout() {
           <Outlet></Outlet>
         </Container>
       </main>
+      <Footer></Footer>
     </div>
   );
 }
