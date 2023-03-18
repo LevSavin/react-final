@@ -10,7 +10,14 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import {Link} from "react-router-dom"
 
-const restaurants: any[] = [
+type restaurantType = {
+  id: number,
+  title: string,
+  image: string,
+  description: string,
+}
+
+const restaurants: restaurantType[] = [
   {
     id: 1,
     title: "Чилим Seafood",
@@ -65,28 +72,34 @@ export default function HomePage() {
           <Grid container spacing={4}>
             {restaurants.map((card) => (
               <Grid item key={card.id} xs={12} sm={12} md={6}>
-                <Card
-                  sx={{ height: "100%", display: "flex", flexDirection: "column" }}
-                >
-                  <Link className="homepage__image-wrapper" to={`${process.env.REACT_APP_REPO}/`}>
-                    <img className="homepage__image" src={card.image} alt={card.title}/>
-                  </Link>{" "}
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {card.title}
-                    </Typography>
-                    <Typography>
-                      {card.description}
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="large">Смотреть</Button>
-                  </CardActions>
-                </Card>
+                <CardComponent card={card}></CardComponent>
               </Grid>
             ))}
           </Grid>
         </Container>
     </Box>
   );
+}
+
+function CardComponent ({card}: {card: restaurantType}) {
+  return (
+    <Card
+      sx={{ height: "100%", display: "flex", flexDirection: "column" }}
+    >
+      <Link className="homepage__image-wrapper" to={`${process.env.REACT_APP_REPO}/`}>
+        <img className="homepage__image" src={card.image} alt={card.title}/>
+      </Link>{" "}
+      <CardContent sx={{ flexGrow: 1 }}>
+        <Typography gutterBottom variant="h5" component="h2">
+          {card.title}
+        </Typography>
+        <Typography>
+          {card.description}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="large">Смотреть</Button>
+      </CardActions>
+    </Card>
+  )
 }
