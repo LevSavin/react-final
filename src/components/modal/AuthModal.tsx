@@ -69,7 +69,7 @@ export default function AuthModal({isModalOpen, handleModalOpen}: {isModalOpen: 
                 sx={{marginTop: "20px", display: "flex", flexDirection: "column"}}
               >
                 <Box>
-                  <TextField id="outlined-basic" label="Номер телефона" variant="outlined" sx={{width: "100%"}}/>
+                  <TextField id="outlined-basic" label="E-mail" variant="outlined" sx={{width: "100%"}}/>
                 </Box>
 
                 <Box sx={{marginTop: "20px"}}>

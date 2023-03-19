@@ -1,4 +1,3 @@
-import "~/pages/_homepage.scss"
 import * as React from "react";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
@@ -9,13 +8,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import {Link} from "react-router-dom"
-
-type restaurantType = {
-  id: number,
-  title: string,
-  image: string,
-  description: string,
-}
+import type {restaurantType} from "@/types/common"
 
 const restaurants: restaurantType[] = [
   {
@@ -62,9 +55,9 @@ export default function HomePage() {
           }}
         >
           <Container maxWidth="md">
-            <Typography variant="h5" align="center" color="text.secondary" paragraph>
+            <h1 className="homepage__hero-text">
               Добро пожаловать на наш фудкорт! Мы рады предложить вам множество вкусных блюд, разных кухонь и на любой вкус. Наша команда шеф-поваров тщательно отбирает качественные продукты и готовит каждое блюдо с любовью. Вы можете наслаждаться вкусом у нас на месте или заказать с собой.
-            </Typography>
+            </h1>
           </Container>
         </Box>
 
@@ -86,7 +79,7 @@ function CardComponent ({card}: {card: restaurantType}) {
     <Card
       sx={{ height: "100%", display: "flex", flexDirection: "column" }}
     >
-      <Link className="homepage__image-wrapper" to={`${process.env.REACT_APP_REPO}/`}>
+      <Link className="homepage__image-wrapper" to={`${process.env.REACT_APP_REPO}/restaurant/${card.id}`}>
         <img className="homepage__image" src={card.image} alt={card.title}/>
       </Link>{" "}
       <CardContent sx={{ flexGrow: 1 }}>

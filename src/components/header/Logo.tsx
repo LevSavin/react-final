@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import Typography from "@mui/material/Typography";
-import IconStorefront from "@mui/icons-material/Storefront";
+import IconLogo from "@/components/icons/IconLogo";
 import Box from "@mui/material/Box";
 
 const style = {
   display: "flex",
-  alignItems: "center"
+  alignItems: "center",
+  cursor: "pointer"
 }
 export default function Logo() {
   const navigate = useNavigate();
@@ -15,8 +16,8 @@ export default function Logo() {
   }
 
   return (
-    <Box className={"sdfsdd"} sx={style}>
-      <IconStorefront sx={{ display: "flex", mr: 1 }} />
+    <Box sx={style}>
+      <IconLogo width={76} height={47}></IconLogo>
       <Typography
         onClick={toMain}
         variant="h6"
@@ -29,6 +30,7 @@ export default function Logo() {
           letterSpacing: ".3rem",
           color: "inherit",
           textDecoration: "none",
+          marginLeft: "12px"
         }}
       >
         ByTheWay

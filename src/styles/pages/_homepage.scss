@@ -1,4 +1,13 @@
 .homepage {
+  &__hero-text {
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    @media(min-width: 992px) {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
   &__image-wrapper {
     position: relative;
     overflow: hidden;

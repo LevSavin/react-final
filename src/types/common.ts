@@ -9,9 +9,20 @@ export type headerItem = {
   code: string,
 }
 
-export type iconsPropsType = {
-  iconColor: string,
-  width: string | number | undefined,
-  height: string | number | undefined,
-  viewBox: string,
+export type restaurantType = {
+  id: number | null,
+  title: string,
+  image: string,
+  description: string,
+}
+
+export type dishType = {
+  id: number | null,
+  section_id?: string,
+  title: string,
+  description: string,
+  image: string,
+  price: number,
+  availability?: boolean,
+  timestamps?: string,
 }

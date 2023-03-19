@@ -35,7 +35,7 @@ function HeaderBar() {
     console.log("Редирект", page.code)
   }
   return (
-    <AppBar position="static" color="default">
+    <AppBar position="sticky" color="default">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Logo></Logo>

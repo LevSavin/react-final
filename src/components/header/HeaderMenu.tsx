@@ -72,7 +72,7 @@ function HeaderDropdown({menu, role, handleModalOpen}: {menu: objectType, role: 
       variant="outlined"
       sx={{ ml: 1, display: "block" }}
     >
-      Войти
+      Для ресторанов
     </Button>
   );
 }
