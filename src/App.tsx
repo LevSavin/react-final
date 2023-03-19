@@ -1,8 +1,8 @@
 import { lazy, Suspense, useEffect } from "react";
 import { Routes, Route } from "react-router-dom"
-import { login } from "./redux/reducers/authReducer";
-import { useAppDispatch, useAppSelector } from "./redux/store";
-import { axios } from "./index";
+import { login } from "@/redux/reducers/authReducer";
+import { useAppDispatch, useAppSelector } from "@/redux/store";
+import { axios } from "@/index";
 
 import Layout from "./components/Layout";
 const HomePage = lazy(() => import("./pages/HomePage"));

@@ -3,9 +3,11 @@ import thunkMiddleware from "redux-thunk"
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux"
 import { composeWithDevTools } from "redux-devtools-extension"
 import {authReducer} from "./reducers/authReducer";
+import {cartReducer} from "./reducers/cartReducer";
 
 const reducer = combineReducers({
     authReducer,
+    cartReducer,
 })
 
 const composedEnhancer = composeWithDevTools(applyMiddleware(thunkMiddleware))

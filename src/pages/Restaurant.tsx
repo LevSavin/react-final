@@ -7,8 +7,10 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import {Link, useParams} from "react-router-dom"
+// import {useParams} from "react-router-dom"
 import type {restaurantType, dishType} from "@/types/common"
+import { setCartCount } from "@/redux/reducers/cartReducer";
+import { useAppDispatch, useAppSelector } from "@/redux/store";
 
 const restaurantMock: restaurantType = {
   id: 1,
@@ -63,7 +65,7 @@ const dishesMock: dishType[] = [
 ]
 
 export default function Restaurant() {
-  const { id } = useParams();
+  // const { id } = useParams();
   const [restaurant, setRestaurant] = useState<restaurantType>({
     id: null,
     title: "",
@@ -100,6 +102,11 @@ export default function Restaurant() {
 }
 
 function CardComponent ({card}: {card: dishType}) {
+  const count = useAppSelector(state => state.cartReducer.count)
+  const dispatch = useAppDispatch()
+  const addCartCoun = () => {
+    dispatch(setCartCount(count + 1));
+  }
   return (
     <Card
       sx={{ height: "100%", display: "flex", flexDirection: "column" }}
@@ -117,7 +124,7 @@ function CardComponent ({card}: {card: dishType}) {
       </CardContent>
       <CardActions>
         <div className="restaurant__card-add">
-          <Button size="large">Добавить</Button>
+          <Button size="large" onClick={addCartCoun}>Добавить</Button>
           <h3>{card.price} РУБ.</h3>
         </div>
       </CardActions>

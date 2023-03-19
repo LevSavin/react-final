@@ -7,7 +7,7 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import type {restaurantType} from "@/types/common"
 
 const restaurants: restaurantType[] = [
@@ -75,6 +75,11 @@ export default function HomePage() {
 }
 
 function CardComponent ({card}: {card: restaurantType}) {
+  const navigate = useNavigate();
+
+  const toRestaurant = () => {
+    navigate(`${process.env.REACT_APP_REPO}/restaurant/${card.id}`);
+  }
   return (
     <Card
       sx={{ height: "100%", display: "flex", flexDirection: "column" }}
@@ -91,7 +96,7 @@ function CardComponent ({card}: {card: restaurantType}) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="large">Смотреть</Button>
+        <Button size="large" onClick={toRestaurant}>Смотреть</Button>
       </CardActions>
     </Card>
   )

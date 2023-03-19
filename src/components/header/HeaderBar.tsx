@@ -9,6 +9,7 @@ import HeaderMenu from "@/components/header/HeaderMenu";
 import Logo from "@/components/header/Logo";
 import AuthModal from "@/components/modal/AuthModal";
 import type {objectType, headerItem} from "@/types/common"
+import { useAppSelector } from "@/redux/store"
 
 
 const role = "guest";
@@ -26,14 +27,16 @@ const menu: objectType = {
 
 function HeaderBar() {
   // const navigate = useNavigate();
-  
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const handleModalOpen = (value) => setIsModalOpen(value);
+  const count = useAppSelector(state => state.cartReducer.count)
 
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  const handleModalOpen = (value) => setIsModalOpen(value);
 
   const handleNavMenu = (page) => {
     console.log("Редирект", page.code)
   }
+
   return (
     <AppBar position="sticky" color="default">
       <Container maxWidth="xl">
@@ -42,13 +45,18 @@ function HeaderBar() {
           
           <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-end", marginRight: "8px" }}>
             {pages[role].map((page: headerItem) => (
-              <Button
-                key={page.code}
-                onClick={() => handleNavMenu(page)}
-                sx={{ mx: 1, display: "block" }}
-              >
-                {page.label}
-              </Button>
+              <Box key={page.code} sx={{position: "relative"}}>
+                <Button
+                  onClick={() => handleNavMenu(page)}
+                  sx={{ mx: 1, display: "block" }}
+                >
+                  {page.label}
+                </Button>
+                {page.code === "GuestOrders" && count !== 0
+                  ? <Box className="count" sx={{position: "absolute", top: "-6px", right: "2px"}}>{count}</Box>
+                  : null
+                }
+              </Box>
             ))}
           </Box>
 
