@@ -1,15 +1,8 @@
-import { lazy, Suspense, useEffect } from "react";
-import { Routes, Route } from "react-router-dom"
+import { Suspense, useEffect } from "react";
 import { login } from "@/redux/reducers/authReducer";
 import { useAppDispatch, useAppSelector } from "@/redux/store";
 import { axios } from "@/index";
-
-import Layout from "./components/Layout";
-const HomePage = lazy(() => import("./pages/HomePage"));
-const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
-const RegisterPage = lazy(() => import("./pages/RegisterPage"));
-const ProfilePage = lazy(() => import("./pages/ProfilePage"));
-const RestaurantPage = lazy(() => import("./pages/Restaurant"));
+import AppRoutes from "@/config/AppRoutes";
 
 function App() {
   // eslint-disable-next-line
@@ -39,15 +32,7 @@ function App() {
 
   return (
     <Suspense fallback={<div className="container">Загрузка...</div>}>
-      <Routes>
-        <Route path={`${process.env.REACT_APP_REPO}/`} element={<Layout/>}>
-          <Route index path={`${process.env.REACT_APP_REPO}/`} element={<HomePage/>}></Route>
-          <Route path={`${process.env.REACT_APP_REPO}/registration`} element={<RegisterPage/>}></Route>
-          <Route path={`${process.env.REACT_APP_REPO}/profile`} element={<ProfilePage/>}></Route>
-          <Route path={`${process.env.REACT_APP_REPO}/restaurant/:id`} element={<RestaurantPage/>}></Route>
-          <Route path="*" element={<NotFoundPage/>}></Route>
-        </Route>
-      </Routes>
+      <AppRoutes></AppRoutes>
     </Suspense>
   );
 }
