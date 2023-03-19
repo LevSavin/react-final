@@ -16,10 +16,9 @@ export default function Logo() {
   }
 
   return (
-    <Box sx={style}>
+    <Box sx={style} onClick={toMain}>
       <IconLogo width={76} height={47}></IconLogo>
       <Typography
-        onClick={toMain}
         variant="h6"
         noWrap
         component="span"
