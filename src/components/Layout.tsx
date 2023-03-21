@@ -8,7 +8,7 @@ function Layout() {
     <div className="layout">
       <HeaderBar></HeaderBar>
       <main>
-        <Container maxWidth="xl" sx={{mt: "20px"}}>
+        <Container maxWidth="xl" sx={{mt: "20px", minHeight: "70vh"}}>
           <Outlet></Outlet>
         </Container>
       </main>

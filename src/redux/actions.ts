@@ -6,8 +6,3 @@ export const SET_USER = (user) => ({
 export const LOGOUT = () => ({
   type: "LOGOUT",
 })
-
-export const SET_CART_COUNT = (count) => ({
-  type: "SET_CART_COUNT",
-  payload: count,
-})

@@ -3,6 +3,7 @@ import { login } from "@/redux/reducers/authReducer";
 import { useAppDispatch, useAppSelector } from "@/redux/store";
 import { axios } from "@/index";
 import AppRoutes from "@/config/AppRoutes";
+import Loading from "@/components/loading/Loading";
 
 function App() {
   // eslint-disable-next-line
@@ -10,6 +11,13 @@ function App() {
   const dispatch = useAppDispatch()
 
   const getAuthInfo = async () => {
+    const mockUser = {
+      email: "test@mail.ru",
+      name: "Иван",
+      role: "restaurant",
+    }
+    dispatch(login(mockUser));
+    
     return
     const url = "/api/123";
     axios
@@ -31,7 +39,7 @@ function App() {
   }, []);
 
   return (
-    <Suspense fallback={<div className="container">Загрузка...</div>}>
+    <Suspense fallback={<Loading></Loading>}>
       <AppRoutes></AppRoutes>
     </Suspense>
   );

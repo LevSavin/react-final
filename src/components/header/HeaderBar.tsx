@@ -1,5 +1,5 @@
 import * as React from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -13,28 +13,29 @@ import { useAppSelector } from "@/redux/store"
 
 
 const role = "guest";
-// const role = "company";
+// const role = "restaurant";
 
 const pages: objectType = {
-  guest: [{label: "Корзина", code: "GuestCart"}, {label: "Мои заказы", code: "GuestOrders"}],
-  company: [{label: "Заказы", code: "CompanyOrders"}, {label: "Блюда", code: "Menu"}, {label: "Аналитика", code: "Analytics"}],
+  guest: [{label: "Корзина", code: "GuestCart", url: "cart"}, {label: "Мои заказы", code: "GuestOrders", url: ""}],
+  restaurant: [{label: "Заказы", code: "CompanyOrders", url: ""}, {label: "Блюда", code: "Menu", url: ""}, {label: "Аналитика", code: "Analytics", url: ""}],
 }
 
 const menu: objectType = {
   guest: [],
-  company: [{label: "Профиль", code: "Profile"}, {label: "Выйти", code: "Logout"}],
+  restaurant: [{label: "Профиль", code: "Profile", url: ""}, {label: "Выйти", code: "Logout", url: ""}],
 }
 
 function HeaderBar() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
+  // const user = useAppSelector(state => state.authReducer.user)
   const count = useAppSelector(state => state.cartReducer.count)
-
+  
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   const handleModalOpen = (value) => setIsModalOpen(value);
 
   const handleNavMenu = (page) => {
-    console.log("Редирект", page.code)
+    navigate(`${process.env.REACT_APP_REPO}/${page.url}`);
   }
 
   return (
@@ -52,7 +53,7 @@ function HeaderBar() {
                 >
                   {page.label}
                 </Button>
-                {page.code === "GuestOrders" && count !== 0
+                {page.code === "GuestCart" && count !== 0
                   ? <Box className="count" sx={{position: "absolute", top: "-6px", right: "2px"}}>{count}</Box>
                   : null
                 }

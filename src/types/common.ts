@@ -26,3 +26,15 @@ export type dishType = {
   availability?: boolean,
   timestamps?: string,
 }
+
+export type cartItemType = {
+  id: number | null,
+  section_id?: string,
+  title: string,
+  description: string,
+  image: string,
+  price: number,
+  availability?: boolean,
+  timestamps?: string,
+  quantity: number,
+}
