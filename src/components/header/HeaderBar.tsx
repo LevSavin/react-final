@@ -16,7 +16,7 @@ const role = "guest";
 // const role = "restaurant";
 
 const pages: objectType = {
-  guest: [{label: "Корзина", code: "GuestCart", url: "cart"}, {label: "Мои заказы", code: "GuestOrders", url: ""}],
+  guest: [{label: "Корзина", code: "GuestCart", url: "cart"}, {label: "Мои заказы", code: "GuestOrders", url: "order"}],
   restaurant: [{label: "Заказы", code: "CompanyOrders", url: ""}, {label: "Блюда", code: "Menu", url: ""}, {label: "Аналитика", code: "Analytics", url: ""}],
 }
 

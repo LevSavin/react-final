@@ -2,6 +2,7 @@
 @import './_reset.scss';
 @import './pages/homepage';
 @import './pages/restaurant';
+@import './pages/order';
 
 * {
   font-family: 'Roboto', sans-serif;
@@ -68,6 +69,9 @@ h3 {
   }
 }
 p {
+  color: $color-font;
+}
+span {
   color: $color-font;
 }
 #app {

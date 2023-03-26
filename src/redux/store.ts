@@ -1,5 +1,5 @@
 import { combineReducers, createStore, applyMiddleware } from "redux";
-import thunkMiddleware from "redux-thunk"
+import thunk from "redux-thunk"
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux"
 import { composeWithDevTools } from "redux-devtools-extension"
 import {authReducer} from "./reducers/authReducer";
@@ -10,8 +10,7 @@ const reducer = combineReducers({
     cartReducer,
 })
 
-const composedEnhancer = composeWithDevTools(applyMiddleware(thunkMiddleware))
-export const store = createStore(reducer, composedEnhancer)
+export const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)))
 // export const store = createStore(reducer, applyMiddleware(thunk, handleMessage))
 
 type AppDispatch = typeof store.dispatch;

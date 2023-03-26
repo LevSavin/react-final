@@ -8,7 +8,8 @@ const NotFoundPage = lazy(() => import("@/pages/NotFoundPage"));
 const RegisterPage = lazy(() => import("@/pages/RegisterPage"));
 const ProfilePage = lazy(() => import("@/pages/ProfilePage"));
 const RestaurantPage = lazy(() => import("@/pages/Restaurant"));
-const CartPage = lazy(() => import("@/pages/Cart"));
+const CartPage = lazy(() => import("@/pages/client/CartPage"));
+const OrderPage = lazy(() => import("@/pages/client/OrderPage"));
 
 const publicRoutes = [
   {
@@ -26,6 +27,14 @@ const publicRoutes = [
   {
     path: `${process.env.REACT_APP_REPO}/restaurant/:id`,
     component: RestaurantPage
+  },
+  {
+    path: `${process.env.REACT_APP_REPO}/cart`,
+    component: CartPage
+  },
+  {
+    path: `${process.env.REACT_APP_REPO}/order`,
+    component: OrderPage
   },
   {
     path: `${process.env.REACT_APP_REPO}/cart`,

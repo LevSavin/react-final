@@ -38,3 +38,18 @@ export type cartItemType = {
   timestamps?: string,
   quantity: number,
 }
+
+export type orderType = {
+  id: number | null,
+  status: string,
+  dishes: orderItemType[],
+  value: number | null,
+}
+
+export type orderItemType = {
+  id: number | null,
+  title: string,
+  image: string,
+  price: number,
+  quantity: number,
+}
