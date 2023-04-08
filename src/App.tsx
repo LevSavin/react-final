@@ -18,8 +18,7 @@ function App() {
     }
     dispatch(login(mockUser));
     
-    return
-    const url = "/api/123";
+    const url = "/restaurants";
     axios
       .get(url)
       .then(() => {

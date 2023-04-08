@@ -1,17 +1,12 @@
-import { useState, useEffect } from "react";
-import ListSubheader from "@mui/material/ListSubheader";
+import { useState } from "react";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Collapse from "@mui/material/Collapse";
 import IconOpen from "@/components/icons/IconOpen";
-import Typography from "@mui/material/Typography";
-import ExpandLess from "@mui/icons-material/ExpandLess";
-import ExpandMore from "@mui/icons-material/ExpandMore";
 import Card from "@mui/material/Card";
-import type {orderType, orderItemType} from "@/types/common"
+import type {orderType} from "@/types/common"
 import Box from "@mui/material/Box";
 
 export default function OrderItem ({order}: {order: orderType}) {

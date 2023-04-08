@@ -9,7 +9,7 @@ import "~/App.scss"
 
 import axiosInstance from "axios";
 export const axios = axiosInstance.create({
-  baseURL: process.env.REACT_APP_BASE_API_URL
+  baseURL: process.env.REACT_APP_BASE_API_URL,
 });
 
 const root = ReactDOM.createRoot(
